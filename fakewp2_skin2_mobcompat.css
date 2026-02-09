@@ -1,0 +1,363 @@
+@font-face {
+	font-family: "Basiic";
+	src: url("https://kaorisu.nekoweb.org/fonts/basiic.ttf");
+}
+@font-face {
+	font-family: "Tanugo Regular";
+	src: url("https://kaorisu.nekoweb.org/fonts/Tanugo-Regular.otf");
+}
+
+@font-face {
+	font-family: "Tanugo Bold";
+	src: url("https://kaorisu.nekoweb.org/fonts/Tanugo-Bold.otf");
+}
+
+body {
+	background: #fff;
+	font-size: 0.875em;
+	font-family: "Basiic";
+	padding: 0;
+	margin: 0;
+	background-size: 20px 20px;
+	background-image: repeating-linear-gradient(
+		0deg,
+		#d59cab,
+		#d59cab 1px,
+		#fff4f4 1px,
+		#fff4f4
+	);
+}
+
+a {
+	color: #8d3950;
+}
+
+.wrapper {
+	background: none;
+	top: 0;
+	margin: 0 auto;
+	width: 870px;
+}
+
+.sidebar-left,
+.sidebar-right {
+	width: 175px;
+}
+
+.main {
+	width: 500px;
+	margin-left: 185px;
+}
+
+.sidebar-left {
+	margin-left: 0px;
+}
+
+.wrapper,
+.links a {
+	color: #4f3d46;
+}
+
+.box {
+	border: 2px solid #8d3950;
+	box-shadow: 1px 2px #8d3950;
+	background: #fff;
+	padding: 0;
+}
+
+.header {
+	color: #fff;
+	text-shadow: 1px 1.2px #8d3950;
+	border: 2px solid #8d3950;
+	box-shadow: 1px 2px #8d3950;
+	background: url("https://file.garden/ZxeTlgpMpVUTaKhi/2026-finished/sakuramilk_1536px.jpeg");
+	background-size: 100%;
+	background-position: 0px -60px;
+	text-align: right;
+	margin-top: 30px;
+	top: 0;
+	height: 250px;
+}
+
+.links {
+	margin-top: 1em;
+}
+
+.title {
+	/*suppress title, since we're putting the title as text in the header box*/
+	display: none;
+}
+
+.footer {
+	height: 0;
+}
+
+.box h1,
+.box h2,
+.box h3,
+.box h4 {
+	background: linear-gradient(
+		to bottom,
+		rgba(252, 236, 252, 1) 0%,
+		rgba(255, 198, 221, 1) 50%,
+		rgba(252, 166, 186, 1) 51%,
+		rgba(237, 130, 162, 1) 100%
+	);
+	margin: 0;
+	padding: 0.35em 0.25em 0.3em 0.25em;
+	text-align: center;
+	color: #fff;
+	text-shadow: 1px 1.2px #8d3950;
+	font-weight: bold;
+
+	border-bottom: 3px solid #8d3950;
+}
+
+.inner {
+	padding: 0.25em 1em 0.3em 1em;
+	font-size: 1.075em;
+}
+
+/* For narrow screens: slightly narrows sidebars, and makes the width
+ * of the main/center div flexible (sized relative to viewport width.)
+ */
+@media (max-width: 880px) {
+	.wrapper {
+		width: calc(340px + 50vw);
+	}
+	.sidebar-left,
+	.sidebar-right {
+		width: 160px;
+	}
+	.main {
+		width: 50vw;
+		margin-left: 170px;
+	}
+}
+
+/*Mobile compatibility. Just turns it all into a vertical layout.*/
+@media (orientation: portrait) {
+	.wrapper {
+		width: 96vw;
+		margin: 0 auto;
+		padding: 0;
+		position: relative;
+	}
+	.wrapper-2 {
+		width: 94vw;
+		margin: 0 auto;
+		padding: 0;
+		position: relative;
+	}
+	.sidebar-left,
+	.main,
+	.sidebar-right,
+	iframe {
+		position: relative;
+		width: 92vw;
+		margin: 0.25rem 1vw;
+	}
+}
+
+/* This is where the buttons on the navigation div go.
+*/
+button {
+	border-radius: 4px;
+	background: linear-gradient(
+		to bottom,
+		rgba(246, 248, 249, 1) 0%,
+		rgba(229, 235, 238, 1) 50%,
+		rgba(215, 222, 227, 1) 51%,
+		rgba(245, 247, 249, 1) 100%
+	); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	border: 1px solid black;
+	color: white;
+	padding: 5px 10px;
+	margin: 3px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+button:hover {
+	margin-top: 20px;
+}
+
+#statuscafe {
+	padding: 0.5em;
+	background-color: white;
+}
+#statuscafe-username {
+	margin-bottom: 0.5em;
+}
+#statuscafe-content {
+	margin: 0 1em 0.5em 1em;
+}
+
+/** Falling Items CSS **/
+
+@-webkit-keyframes snowflakes-fall {
+	0% {
+		top: -10%;
+	}
+	100% {
+		top: 100%;
+	}
+}
+
+@-webkit-keyframes snowflakes-shake {
+	0%,
+	100% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(80px);
+	}
+}
+.snowflake {
+	position: fixed;
+	top: -10%;
+	z-index: 9999;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-animation-name: snowflakes-fall, snowflakes-shake;
+	-webkit-animation-duration: 10s, 3s;
+	-webkit-animation-timing-function: linear, ease-in-out;
+	-webkit-animation-iteration-count: infinite, infinite;
+	-webkit-animation-play-state: running, running;
+	animation-name: snowflakes-fall, snowflakes-shake;
+	animation-duration: 10s, 3s;
+	animation-timing-function: linear, ease-in-out;
+	animation-iteration-count: infinite, infinite;
+	animation-play-state: running, running;
+}
+
+.snowflake:nth-of-type(0) {
+	left: 1%;
+	-webkit-animation-delay: 0s, 0s;
+	animation-delay: 0s, 0s;
+}
+
+.snowflake:nth-of-type(1) {
+	left: 10%;
+	-webkit-animation-delay: 1s, 1s;
+	animation-delay: 1s, 1s;
+}
+
+.snowflake:nth-of-type(2) {
+	left: 20%;
+	-webkit-animation-delay: 6s, 0.5s;
+	animation-delay: 6s, 0.5s;
+}
+
+.snowflake:nth-of-type(3) {
+	left: 30%;
+	-webkit-animation-delay: 4s, 2s;
+	animation-delay: 4s, 2s;
+}
+
+.snowflake:nth-of-type(4) {
+	left: 40%;
+	-webkit-animation-delay: 2s, 2s;
+	animation-delay: 2s, 2s;
+}
+
+.snowflake:nth-of-type(5) {
+	left: 50%;
+	-webkit-animation-delay: 8s, 3s;
+	animation-delay: 8s, 3s;
+}
+
+.snowflake:nth-of-type(6) {
+	left: 60%;
+	-webkit-animation-delay: 6s, 2s;
+	animation-delay: 6s, 2s;
+}
+
+.snowflake:nth-of-type(7) {
+	left: 70%;
+	-webkit-animation-delay: 2.5s, 1s;
+	animation-delay: 2.5s, 1s;
+}
+
+.snowflake:nth-of-type(8) {
+	left: 80%;
+	-webkit-animation-delay: 1s, 0s;
+	animation-delay: 1s, 0s;
+}
+
+.snowflake:nth-of-type(9) {
+	left: 90%;
+	-webkit-animation-delay: 3s, 1.5s;
+	animation-delay: 3s, 1.5s;
+}
+
+.snowflake:nth-of-type(10) {
+	left: 25%;
+	-webkit-animation-delay: 2s, 0s;
+	animation-delay: 2s, 0s;
+}
+
+.snowflake:nth-of-type(11) {
+	left: 65%;
+	-webkit-animation-delay: 4s, 2.5s;
+	animation-delay: 4s, 2.5s;
+}
+
+/* Text Link Rotate on Hover by Sadgrl */
+ul {
+	list-style-type: none; /* this removes the bulletpoints */
+	/* there is an annoying left padding in the ul element by default */
+	padding-left: 0; /* this removes it */
+}
+
+li a {
+	display: inline-block;
+	transition: 0.3s;
+	transition-timing-function: ease;
+	/* this allows us to add margin to each item so there's space for it to rotate */
+	margin: 2px;
+}
+
+/* this makes stuff happen when you hover! */
+li a:hover {
+	transform: translateX(5px) rotate(1deg);
+
+	/* play with this 15deg value, works w/ negatives too! */
+	/* more CSS transform options: https://developer.mozilla.org/en-US/docs/Web/CSS/transform */
+}
+
+nav li a {
+	text-decoration: none;
+}
+
+.button {
+	background: linear-gradient(
+		to bottom,
+		#ffffff 0%,
+		#f9eaef 50%,
+		#f7d7e0 51%,
+		#f9e3ec 100%
+	);
+	padding: 5px 10px;
+	text-align: center;
+	font-size: 16px;
+	margin: 2px 5px;
+	border: 0.08em solid #8d3950;
+	box-shadow: 0px 1px #8d3950;
+}
+
+.button:hover {
+	background: linear-gradient(
+		to bottom,
+		#ffe8ee 0%,
+		#f9ccd7 50%,
+		#f2a7c3 51%,
+		#f7c0d0 100%
+	);
+}
