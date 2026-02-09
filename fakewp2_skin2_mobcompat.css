@@ -1,15 +1,15 @@
 @font-face {
 	font-family: "Basiic";
-	src: url("https://kaorisu.nekoweb.org/fonts/basiic.ttf");
+	src: url("/fonts/basiic.ttf");
 }
 @font-face {
 	font-family: "Tanugo Regular";
-	src: url("https://kaorisu.nekoweb.org/fonts/Tanugo-Regular.otf");
+	src: url("/fonts/Tanugo-Regular.otf");
 }
 
 @font-face {
 	font-family: "Tanugo Bold";
-	src: url("https://kaorisu.nekoweb.org/fonts/Tanugo-Bold.otf");
+	src: url("/fonts/Tanugo-Bold.otf");
 }
 
 body {
