@@ -1,6 +1,36 @@
 <!doctype html>
 <html>
 	<head>
+
+<script>
+function handleMarquee() {
+// Get all marquees on page
+const marquees = document.querySelectorAll(".marquee");
+
+// Loop through each marquee
+  marquees.forEach((marquee) => {
+    // Get the main container and clone it
+    // And then add the clone to the marquee
+    const container = marquee.querySelector(".marquee-items");
+    let clone = container.cloneNode(true);
+    marquee.appendChild(clone);
+    
+    // Finally, add the scroll class at the same time so there is no gaps in the scrolling effect
+    // We also determine if the items should be scrolling right-to-left instead by default, and adjust the marquees flex
+    // direction and which animation the containers use if so
+    if (marquee.dataset.direction == "right") {
+      marquee.style.flexDirection = "row-reverse";
+      container.classList.add("scroll-l2r");
+      clone.classList.add("scroll-l2r");
+    } else {
+      container.classList.add("scroll-r2l");
+      clone.classList.add("scroll-r2l");
+    }
+  });
+}
+handleMarquee();
+</script>
+        
 		<script src="https://kaorisu.nekoweb.org/scripts/frame-link.js"></script>
 		<link
 			rel="icon"
