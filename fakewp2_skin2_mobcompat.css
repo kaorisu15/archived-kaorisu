@@ -405,4 +405,17 @@ marquee items or other effects and styles!*/
   margin: 0;
   height: 31px;
 }
-        
+
+@keyframes scroll-l2r {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.scroll-l2r {
+  animation: scroll-l2r 10s linear infinite;
+}
