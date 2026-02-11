@@ -421,7 +421,7 @@ Make changes here if you want spaces in-between the
 marquee items or other effects and styles!*/
 .marquee-items > * {
   margin: 0;
-  height: 31px;
+  height: 28px;
 }
 
 .paused {
