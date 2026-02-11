@@ -402,9 +402,9 @@ nav li a {
   box-sizing: unset;
   
   /*  You dont need a border or a set width on yours, but it makes the effect look better if the marquee width is smaller than the number of items in your marquee  */
-  border: 2px solid #4f3d46;
+  border: 3px solid #4f3d46;
   background: #f9e3ec;
-  width: 500px;
+  width: 870px;
 }
 
 .marquee-items {
