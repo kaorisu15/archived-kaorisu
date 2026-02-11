@@ -363,6 +363,7 @@ nav li a {
 }
 
 /* Infinite Custom Marquee by Koba */
+/* This is what causes the actual smooth scrolling */
 @keyframes scroll-r2l {
   from {
     transform: translateX(0);
@@ -373,10 +374,27 @@ nav li a {
   }
 }
 
+/* Change the '10s' in this to change how fast it scrolls! */
 .scroll-r2l {
-  animation: scroll-r2l 10s linear infinite;
+  animation: scroll-r2l 15s linear infinite;
 }
 
+/* Left-to-Right */
+@keyframes scroll-l2r {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.scroll-l2r {
+  animation: scroll-l2r 10s linear infinite;
+}
+
+/* 'Display: Flex' is extremely important to use here so all the items inside the marquee line up correctly, and the duplicated container lines up properly with the original */
 .marquee {
   overflow: hidden;
   display: flex;
@@ -385,14 +403,14 @@ nav li a {
   
   /*  You dont need a border or a set width on yours, but it makes the effect look better if the marquee width is smaller than the number of items in your marquee  */
   border: 2px solid #4f3d46;
-  background:#f9e3ec;
-  width: 800px;
+  background: #f9e3ec;
+  width: 500px;
 }
 
 .marquee-items {
   display: flex;
   flex-shrink: 0;
-  height: 100%; /* This line is extremely important to prevent bugs on some browsers such as FireFox */
+  height: 100%;
   min-width: 100%;
   position: relative;
 }
@@ -406,16 +424,9 @@ marquee items or other effects and styles!*/
   height: 31px;
 }
 
-@keyframes scroll-l2r {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(100%);
-  }
-}
-
-.scroll-l2r {
-  animation: scroll-l2r 10s linear infinite;
+.paused {
+  -webkit-animation-play-state:paused;
+  -moz-animation-play-state:paused;
+  -o-animation-play-state:paused;
+  animation-play-state:paused;
 }
