@@ -1,6 +1,6 @@
 @font-face {
 	font-family: "Basiic";
-	src: url("./fonts/basiic.ttf");
+	src: url("fonts/basiic.ttf");
 }
 @font-face {
 	font-family: "Tanugo Regular";
@@ -132,4 +132,5 @@ td {
 		column-count: 1;
 	}
 }
+
 
